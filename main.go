@@ -1,13 +1,18 @@
 package main
 
 import (
+	"context"
 	"log"
 	"net/http"
 	"os"
 
 	"github.com/gin-gonic/gin"
-	_ "github.com/heroku/x/hmetrics/onload"
+	"github.com/heroku/x/hmetrics"
 )
+
+type fataler interface {
+	Fatal() bool
+}
 
 func main() {
 	port := os.Getenv("PORT")
@@ -24,6 +29,16 @@ func main() {
 	router.GET("/", func(c *gin.Context) {
 		c.HTML(http.StatusOK, "index.tmpl.html", nil)
 	})
+
+	hml := log.New(os.Stderr, "heroku metrics", 0)
+	if err := hmetrics.Report(context.Background(), hml); err != nil {
+		if f, ok := err.(fataler); ok {
+			if f.Fatal() {
+				log.Fatal(err)
+			}
+			log.Println(err)
+		}
+	}
 
 	router.Run(":" + port)
 }
