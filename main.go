@@ -30,8 +30,12 @@ func main() {
 		c.HTML(http.StatusOK, "index.tmpl.html", nil)
 	})
 
-	hml := log.New(os.Stderr, "heroku metrics", 0)
-	if err := hmetrics.Report(context.Background(), hml); err != nil {
+	ef := func(err error) error {
+		log.Println("hmetrics error:", err)
+		return nil
+	}
+
+	if err := hmetrics.Report(context.Background(), ef); err != nil {
 		if f, ok := err.(fataler); ok {
 			if f.Fatal() {
 				log.Fatal(err)

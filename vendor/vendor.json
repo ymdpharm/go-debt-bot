@@ -21,16 +21,10 @@
 			"revision": "4cc2de6207f4128624cbdd16be30f64966c67c08"
 		},
 		{
-			"checksumSHA1": "9yqKloZ1ArTqKdo249vacZXdLC0=",
+			"checksumSHA1": "3DYVAk/shf/phz6X6nyO+B7s2Zw=",
 			"path": "github.com/heroku/x/hmetrics",
-			"revision": "c3622e6fc7cb5fab119dfdb084d00935263e1966",
-			"revisionTime": "2017-08-08T22:25:44Z"
-		},
-		{
-			"checksumSHA1": "GOeW0t8PSBNHFTUHmdSgPv2kl/0=",
-			"path": "github.com/heroku/x/hmetrics/onload",
-			"revision": "db51a09f7a0194d45555aa12fabfa060d017d41a",
-			"revisionTime": "2017-08-01T22:59:35Z"
+			"revision": "c405b85b19a4b480376ab0f37e56a85fcb7a5bf5",
+			"revisionTime": "2017-08-14T21:46:13Z"
 		},
 		{
 			"checksumSHA1": "ZUOd8OUOp+xdpB7p4w/O86Y8wyc=",
