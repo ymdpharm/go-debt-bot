@@ -17,7 +17,7 @@
   branch = "master"
   name = "github.com/golang/protobuf"
   packages = ["proto"]
-  revision = "0a4f71a498b7c4812f64969510bcb4eca251e33a"
+  revision = "130e6b02ab059e7b717a096f397c5b60111cae74"
 
 [[projects]]
   name = "github.com/mattn/go-isatty"
@@ -29,25 +29,25 @@
   branch = "master"
   name = "github.com/ugorji/go"
   packages = ["codec"]
-  revision = "5efa3251c7f7d05e5d9704a69a984ec9f1386a40"
+  revision = "54210f4e076c57f351166f0ed60e67d3fca57a36"
 
 [[projects]]
   branch = "master"
   name = "golang.org/x/sys"
   packages = ["unix"]
-  revision = "4cd6d1a821c7175768725b55ca82f14683a29ea4"
+  revision = "429f518978ab01db8bb6f44b66785088e7fba58b"
 
 [[projects]]
   name = "gopkg.in/go-playground/validator.v8"
   packages = ["."]
-  revision = "5f57d2222ad794d0dffb07e664ea05e2ee07d60c"
-  version = "v8.18.1"
+  revision = "5f1438d3fca68893a817e4a66806cea46a9e4ebf"
+  version = "v8.18.2"
 
 [[projects]]
   branch = "v2"
   name = "gopkg.in/yaml.v2"
   packages = ["."]
-  revision = "3b4ad1db5b2a649883ff3782f5f9f6fb52be71af"
+  revision = "eb3733d160e74a9c7e442f435eb3bea458e1d19f"
 
 [solve-meta]
   analyzer-name = "dep"

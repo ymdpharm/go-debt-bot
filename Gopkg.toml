@@ -1,7 +1,6 @@
-[metadata]
-  [metadata.heroku]
+[metadata.heroku]
     root-package = "github.com/heroku/go-getting-started"
-    additional-tools = ["foo","bar","bazzle"]
+    install = ["."]
 
 [[constraint]]
   name = "github.com/gin-gonic/gin"
