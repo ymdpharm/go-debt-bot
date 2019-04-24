@@ -1,24 +1,27 @@
-- 夫婦間での立て替えた金額の累積の差を管理するだけのLINE bot
-- 高機能なアプリを使うのがイヤだったので作った
-- 複数グループ/複数人数に対応しているはずだけど細かい動作は確認してない
-- LINE Messaging API/golang/heroku/Redis
+- お金の貸し借りを累積で覚えててくれるLINE botのバックエンド
+- 頻発する夫婦間の貸し借り/立て替えをミニマルに管理したくて作った
+- golang on heroku/Redis
 
-## usage
+## bot usage
 - preparation: 
-    - グループに招待して使う
-- basic words:
-    - `[int]`: "貸し" を登録
-- special words: 
-    - `iam [string]`: 自分の呼ばれ方きめる/変える
-    - `check`: グループ内の貸し借りを確認する
-    - `reset`: グループ内の貸し借りを精算する
+    - botをグループに招待
+- post:
+    - `[int]`: グループメンバーに払ってほしい額をpost
+    - `iam [string]`: 自分の呼ばれ方をきめる/変える
+    - `check`: 累積額の差を問い合わせる
+    - `reset`: 実績を消す(精算)
     - `help`: help
 
-## requires
-- active line bot channel
-- active heroku app with Redigo(add-on) backend
+## setting up server
+- requires
+    - active line bot channel
+    - active heroku app with Redigo(add-on) backend
+
+- set line tokens as env var
+
 ```
-heroku create
-heroku config:set CHANNEL_SECRET=[line channel secret] -a [appname]
-heroku config:set CHANNEL_ACCESS_TOKEN=[line channel access token] -a [appname]
+heroku config:set CHANNEL_SECRET=** -a [appname]
+heroku config:set CHANNEL_ACCESS_TOKEN=** -a [appname]
 ```
+
+- deploy heroku app
