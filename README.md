@@ -8,9 +8,12 @@
 - post:
     - `[int]`: グループメンバーに払ってほしい額をpost
     - `iam [string]`: 自分の呼ばれ方をきめる/変える
-    - `check`: 累積額の差を問い合わせる
-    - `reset`: 実績を消す(精算)
+    - `check`: 貸し借りを問い合わせる
+    - `reset`: 貸し借りを消す(精算)
     - `help`: help
+- memo
+    - グループ×ユーザーでユーザー管理
+    - 貸し借りの表示は最終的な差分
 
 ## setting up server
 - requires
