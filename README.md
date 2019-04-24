@@ -16,7 +16,7 @@
 
 ## requires
 - active line bot channel
-- active heroku app with Redis(add-on) backend
+- active heroku app with Redigo(add-on) backend
 ```
 heroku create
 heroku config:set CHANNEL_SECRET=[line channel secret] -a [appname]
