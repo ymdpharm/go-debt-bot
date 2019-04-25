@@ -30,7 +30,7 @@ func main() {
 	c.HTML(http.StatusOK, "index.tmpl.html", nil)
 	})
 
-	channelSecret := os.Getenv("CHANNEL_SECRET")
+    channelSecret := os.Getenv("CHANNEL_SECRET")
     channelAccessToken := os.Getenv("CHANNEL_ACCESS_TOKEN")
 
 	router.POST("/hook", func(c *gin.Context) {
@@ -80,7 +80,7 @@ func getRes(source *linebot.EventSource, message string, conn redis.Conn) (strin
         case "iam": return storeNewUser(conn, source, sliced[1])
         case "check": return checkPrice(conn, source) 
         case "reset": return resetPrice(conn, source)
-        case "help": return "今はね, iam [name], check, reset が使える", nil
+        case "help": return "see: https://github.com/ymdpharm/go-debt-bot/blob/master/README.md", nil
         }
     } else {
         return storePrice(conn, source, price)
